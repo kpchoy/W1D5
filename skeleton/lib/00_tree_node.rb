@@ -50,13 +50,29 @@ class PolyTreeNode
     nil
   end
   
+  # 1) Add root node to Queue
+  # 2) Check first item of queue (root node) 
+  #         a) if equal to target, return target
+  #         b) else shift off that node
+  # 3) Push children of root to queue
+  # 4) Check next item
+  # 
   def bfs(target_value)
+    
     queue = Queue.new
     queue.push(self)
-    # until queue.empty?
-    # 
-    # end
+    until queue.empty?
+      current_node = queue.shift 
+      if current_node.value == target_value
+        return current_node
+      else
+        current_node.children.each do |child|
+          queue << child
+        end
+      end
+    end
     
+    nil 
   end 
   
 
