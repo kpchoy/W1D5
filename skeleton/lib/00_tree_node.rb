@@ -44,7 +44,7 @@ class PolyTreeNode
     
     self.children.each do |child|
       node = child.dfs(target_value)
-      return node if node != nil 
+      return node unless node.nil?
     end 
     
     nil
