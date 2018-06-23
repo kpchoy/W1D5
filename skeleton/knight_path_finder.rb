@@ -5,6 +5,7 @@ class KnightPathFinder
   end
   
   def build_move_tree(ending_pos)
+    arr = []
     root = PolyTreeNode.new(@visited_positions[0])
     until @visited_positions.include?(ending_pos)
       new_move_positions(root.value).each do |move|
